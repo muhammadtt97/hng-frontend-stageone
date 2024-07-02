@@ -14,7 +14,27 @@ document.addEventListener('DOMContentLoaded', () => {
         currentDayElement.textContent = currentDay;
     };
 
+    const updateImageDimensions = () => {
+        const profileImage = document.querySelector('[data-testid="slackProfilePicture"]');
+        if (profileImage) {
+            if (profileImage.complete) {
+                setImageDimensions();
+            } else {
+                profileImage.onload = setImageDimensions;
+            }
+        }
+
+        function setImageDimensions() {
+            const naturalWidth = profileImage.naturalWidth;
+            const naturalHeight = profileImage.naturalHeight;
+            profileImage.setAttribute('width', naturalWidth);
+            profileImage.setAttribute('height', naturalHeight);
+            console.log(`Natural dimensions: ${naturalWidth}x${naturalHeight}`);
+        }
+    };
+
     updateTime();
     updateDay();
+    updateImageDimensions();
     setInterval(updateTime, 1000);
 });
