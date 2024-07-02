@@ -35,8 +35,8 @@ To set up the project locally, follow these steps:
 
 1. Clone the repository:
     ```bash
-    git clone https://github.com/<your-username>/my-tech-goals.git
-    cd my-tech-goals
+    git clone https://github.com/muhammadtt97/hng-frontend-stageone
+    cd hng-frontend-stageone
     ```
 
 2. Open the project directory and ensure all the files are in place:
